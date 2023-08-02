@@ -1,0 +1,50 @@
+@import "assets/scss/vars.scss";
+
+.field_holder {
+	h6 {
+		font-size: 16px;
+		font-weight: 600;
+		color: $primaryColor;
+		margin-bottom: 10px;
+	}
+
+	:global {
+		.MuiTextField-root {
+			width: 100%;
+			background-color: #fff !important;
+			border: 0;
+			box-shadow: none;
+			border-radius: 10px;
+			-webkit-border-radius: 10px;
+			-moz-border-radius: 10px;
+			-ms-border-radius: 10px;
+			-o-border-radius: 10px;
+		}
+
+		fieldset {
+			border-color: $primaryColor;
+		}
+	}
+}
+
+.input_box {
+	position: relative;
+
+	.show_icon {
+		padding: 0;
+		position: absolute;
+		right: 12px;
+		top: 50%;
+		transform: translateY(-50%);
+		-webkit-transform: translateY(-50%);
+		-moz-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		-o-transform: translateY(-50%);
+		color: $primaryColor;
+
+		#{$rtl} & {
+			right: auto;
+			left: 12px;
+		}
+	}
+}

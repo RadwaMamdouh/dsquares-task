@@ -1,0 +1,14 @@
+@import "assets/scss/vars.scss";
+
+.dashboard {
+	display: flex;
+	min-height: 100vh;
+}
+
+.pages_content {
+	width: 100%;
+	padding: 40px 25px;
+	height: 100vh;
+	overflow-x: hidden;
+	overflow-y: auto;
+}

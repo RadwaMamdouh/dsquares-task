@@ -1,0 +1,44 @@
+@import "assets/scss/vars.scss";
+
+%status {
+	padding: 7px 17px;
+	border-radius: 13px;
+	-webkit-border-radius: 13px;
+	-moz-border-radius: 13px;
+	-ms-border-radius: 13px;
+	-o-border-radius: 13px;
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: capitalize;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: fit-content;
+	white-space: nowrap;
+}
+
+:global {
+	.pending {
+		@extend %status;
+		background-color: #f5c62a33;
+		color: #f5c62a;
+	}
+
+	.transformed {
+		@extend %status;
+		background-color: #83838333;
+		color: #838383;
+	}
+
+	.closed {
+		@extend %status;
+		background-color: #438fce33;
+		color: #438fce;
+	}
+
+	.closedwithcoupon {
+		@extend %status;
+		background-color: #2ec98833;
+		color: #2ec988;
+	}
+}

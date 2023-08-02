@@ -1,0 +1,178 @@
+@import "assets/scss/vars.scss";
+
+.sideBar_holder {
+	height: 100vh;
+	box-shadow: 0 0 4px 5px #eee;
+	min-width: 230px;
+	max-width: 250px;
+	display: flex;
+	flex-direction: column;
+	background-color: #fff;
+
+	.top {
+		padding: 15px 30px;
+		border-bottom: 1px solid #eee;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 10px;
+
+		.logo {
+			flex-shrink: 0;
+			width: 100%px;
+			max-width: 146px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			overflow: hidden;
+
+			img {
+				width: 100%;
+			}
+		}
+	}
+
+	.sideBar_links {
+		flex-grow: 1;
+		overflow-y: auto;
+		display: flex;
+		flex-direction: column;
+		row-gap: 10px;
+		padding: 15px 20px;
+		padding-inline-end: 0;
+
+		.sideBar_link {
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			column-gap: 12px;
+			padding: 10px 12px;
+			background: #fff;
+			color: $darkColor;
+			-webkit-border-radius: 4px;
+			-moz-border-radius: 4px;
+			-ms-border-radius: 4px;
+			-o-border-radius: 4px;
+			border-radius: 4px;
+			-webkit-transition: 0.3s;
+			-moz-transition: 0.3s;
+			-ms-transition: 0.3s;
+			-o-transition: 0.3s;
+			transition: 0.3s;
+			border-inline-end: 4px solid transparent;
+			#{$ltr} & {
+				border-top-right-radius: 0;
+				border-bottom-right-radius: 0;
+			}
+			#{$rtl} & {
+				border-top-left-radius: 0;
+				border-bottom-left-radius: 0;
+			}
+
+			:global {
+				.MuiSvgIcon-root {
+					flex-shrink: 0;
+					color: $primaryColor;
+				}
+			}
+
+			span {
+				font-size: 14px;
+				font-weight: 500;
+				color: $darkColor;
+				transition: 0.3s;
+				-webkit-transition: 0.3s;
+				-moz-transition: 0.3s;
+				-ms-transition: 0.3s;
+				-o-transition: 0.3s;
+			}
+
+			&:hover {
+				#{$ltr} & {
+					background: linear-gradient(to right, #edf4fa 90%, #fff 90%);
+				}
+				#{$rtl} & {
+					background: linear-gradient(to left, #edf4fa 90%, #fff 90%);
+				}
+				color: $primaryColor;
+				border-inline-end-color: $primaryColor;
+
+				span {
+					color: $primaryColor;
+				}
+			}
+		}
+
+		:global(.active) {
+			#{$ltr} & {
+				background: linear-gradient(to right, #edf4fa 90%, #fff 90%);
+			}
+			#{$rtl} & {
+				background: linear-gradient(to left, #edf4fa 90%, #fff 90%);
+			}
+			color: $primaryColor;
+			border-inline-end-color: $primaryColor;
+
+			span {
+				color: $primaryColor;
+				font-weight: 700;
+			}
+		}
+	}
+
+	.bottom {
+		padding: 10px;
+		border-top: 1px solid #eee;
+
+		.info_action {
+			padding: 14px;
+			background-color: #f7f7f7;
+			border-radius: 10px;
+			-webkit-border-radius: 10px;
+			-moz-border-radius: 10px;
+			-ms-border-radius: 10px;
+			-o-border-radius: 10px;
+
+			.info {
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+				gap: 10px;
+				margin-bottom: 10px;
+
+				:global(.MuiSvgIcon-root) {
+					font-size: 2.5rem;
+					color: $primaryColor;
+				}
+
+				.name {
+					h6 {
+						color: #8b8b8b;
+						margin-bottom: 2px;
+					}
+
+					h4 {
+						font-size: 14px;
+					}
+				}
+			}
+
+			.actions {
+				:global {
+					.MuiButton-root {
+						&:not(:last-child) {
+							margin-bottom: 10px;
+						}
+
+						justify-content: flex-start;
+						gap: 10px;
+
+						span {
+							font-size: 14px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

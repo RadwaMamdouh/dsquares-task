@@ -1,0 +1,16 @@
+@import "assets/scss/vars.scss";
+
+.pages_head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+	margin-bottom: 30px;
+
+	h1 {
+		font-size: 22px;
+		color: $darkColor;
+		font-weight: 700;
+		margin-bottom: 0;
+	}
+}

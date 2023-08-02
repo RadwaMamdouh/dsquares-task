@@ -1,0 +1,36 @@
+@import "assets/scss/vars.scss";
+
+:global {
+	.MuiTabPanel-root {
+		padding: 24px 0 !important;
+	}
+
+	.MuiDataGrid-root {
+		background-color: #fff !important;
+		border-radius: 17px !important;
+		-webkit-border-radius: 17px !important;
+		-moz-border-radius: 17px !important;
+		-ms-border-radius: 17px !important;
+		-o-border-radius: 17px !important;
+		overflow: hidden;
+	}
+
+	.MuiDataGrid-main {
+		& > div {
+			&:last-child {
+				display: none;
+			}
+		}
+	}
+}
+
+.all_details {
+	padding: 6px 10px !important;
+	font-size: 12px !important;
+	border-radius: 50px !important;
+	-webkit-border-radius: 50px !important;
+	-moz-border-radius: 50px !important;
+	-ms-border-radius: 50px !important;
+	-o-border-radius: 50px !important;
+	text-transform: capitalize !important;
+}
