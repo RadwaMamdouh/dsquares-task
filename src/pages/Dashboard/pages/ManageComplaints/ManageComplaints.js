@@ -38,7 +38,7 @@ const ManageComplaints = () => {
 			headerName: "Complaint Department",
 			type: "singleSelect",
 			valueOptions: ["Anti-Evasion", "Control", "Default"],
-			width: 180,
+			width: 230,
 		},
 		{
 			field: "complaintStatus",
