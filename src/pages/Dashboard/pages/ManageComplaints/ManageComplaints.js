@@ -14,6 +14,7 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 // Components
 import PagesHead from "components/UI/PagesHead/PagesHead";
 import Status from "components/UI/Status/Status";
+import ComplaintTimeFrame from "components/UI/ComplaintTimeFrame/ComplaintTimeFrame";
 
 // STYLES
 import styles from "./ManageComplaints.module.scss";
@@ -35,6 +36,8 @@ const ManageComplaints = () => {
 		{
 			field: "complaintDepartment",
 			headerName: "Complaint Department",
+			type: "singleSelect",
+			valueOptions: ["Anti-Evasion", "Control", "Default"],
 			width: 180,
 		},
 		{
@@ -44,6 +47,8 @@ const ManageComplaints = () => {
 			renderCell: (complaintStatus) => (
 				<Status statusTxt={complaintStatus.value} />
 			),
+			type: "singleSelect",
+			valueOptions: ["Pending", "Transformed", "Closed", "Closed With Coupon"],
 		},
 		{
 			field: "complaintDate",
@@ -58,6 +63,18 @@ const ManageComplaints = () => {
 			field: "complaintTimeFrame",
 			headerName: "Complaint Time Frame",
 			width: 180,
+			type: "singleSelect",
+			valueOptions: ["Normal", "Warning", "Danger"],
+			renderCell: (complaintTimeFrame) => (
+				<ComplaintTimeFrame timeFrame={complaintTimeFrame.value} />
+			),
+			renderHeader: () => (
+				<Box className={styles.time_frame_header}>
+					<Box component="span" className={styles.normal}></Box>
+					<Box component="span" className={styles.warning}></Box>
+					<Box component="span" className={styles.danger}></Box>
+				</Box>
+			),
 		},
 		{
 			field: "taxPayerName",
@@ -68,11 +85,15 @@ const ManageComplaints = () => {
 			field: "city",
 			headerName: "City",
 			width: 180,
+			type: "singleSelect",
+			valueOptions: ["Cairo", "Giza"],
 		},
 		{
 			field: "area",
 			headerName: "Area",
 			width: 180,
+			type: "singleSelect",
+			valueOptions: ["Tagamoa", "Zamalek", "Dokki", "Nasr City", "Maadi"],
 		},
 		{
 			field: "taxPayerBranchName",
@@ -133,10 +154,10 @@ const ManageComplaints = () => {
 		{
 			id: 3,
 			complaintNumber: "129861294",
-			complaintDepartment: "Anti-Evasion",
+			complaintDepartment: "Default",
 			complaintStatus: "Transformed",
 			complaintDate: new Date(2023, 7, 10, 17, 15),
-			complaintTimeFrame: "Closed",
+			complaintTimeFrame: "Warning",
 			taxPayerName: "Starbucks",
 			city: "Giza",
 			area: "Zamalek",
@@ -146,10 +167,10 @@ const ManageComplaints = () => {
 		{
 			id: 4,
 			complaintNumber: "129861294",
-			complaintDepartment: "Anti-Evasion",
+			complaintDepartment: "Control",
 			complaintStatus: "Closed",
 			complaintDate: new Date(2023, 2, 24, 17, 15),
-			complaintTimeFrame: "Closed",
+			complaintTimeFrame: "Danger",
 			taxPayerName: "Starbucks",
 			city: "Giza",
 			area: "Dokki",
@@ -159,10 +180,10 @@ const ManageComplaints = () => {
 		{
 			id: 5,
 			complaintNumber: "129861294",
-			complaintDepartment: "Anti-Evasion",
+			complaintDepartment: "Control",
 			complaintStatus: "Pending",
 			complaintDate: new Date(2023, 6, 21, 2, 55),
-			complaintTimeFrame: "Normal",
+			complaintTimeFrame: "Danger",
 			taxPayerName: "Starbucks",
 			city: "Cairo",
 			area: "Maadi",
@@ -185,10 +206,10 @@ const ManageComplaints = () => {
 		{
 			id: 7,
 			complaintNumber: "129861294",
-			complaintDepartment: "Anti-Evasion",
+			complaintDepartment: "Default",
 			complaintStatus: "Transformed",
 			complaintDate: new Date(2023, 1, 13, 17, 15),
-			complaintTimeFrame: "Normal",
+			complaintTimeFrame: "Warning",
 			taxPayerName: "Starbucks",
 			city: "Cairo",
 			area: "Maadi",
@@ -198,10 +219,10 @@ const ManageComplaints = () => {
 		{
 			id: 8,
 			complaintNumber: "129861294",
-			complaintDepartment: "Anti-Evasion",
+			complaintDepartment: "Default",
 			complaintStatus: "Closed With Coupon",
 			complaintDate: new Date(2023, 3, 20, 16, 20),
-			complaintTimeFrame: "Normal",
+			complaintTimeFrame: "Warning",
 			taxPayerName: "Starbucks",
 			city: "Cairo",
 			area: "Maadi",
@@ -211,7 +232,7 @@ const ManageComplaints = () => {
 		{
 			id: 9,
 			complaintNumber: "129861294",
-			complaintDepartment: "Anti-Evasion",
+			complaintDepartment: "Control",
 			complaintStatus: "Pending",
 			complaintDate: new Date(2023, 5, 22, 11, 30),
 			complaintTimeFrame: "Normal",
@@ -286,7 +307,11 @@ const ManageComplaints = () => {
 							}}
 							pagination={true}
 							unstable_headerFilters
-							// disableColumnMenu={true}
+							slots={{
+								headerFilterMenu: null,
+							}}
+							disableColumnMenu={true}
+							disableColumnFilter={true}
 						/>
 					</div>
 				</TabPanel>
