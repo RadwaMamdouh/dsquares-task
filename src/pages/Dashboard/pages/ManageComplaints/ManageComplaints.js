@@ -5,6 +5,9 @@ import TabPanel from "@mui/lab/TabPanel";
 
 import { DataGridPro } from "@mui/x-data-grid-pro";
 
+// Moment
+import moment from "moment/moment";
+
 // Icons
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
@@ -45,7 +48,11 @@ const ManageComplaints = () => {
 		{
 			field: "complaintDate",
 			headerName: "Complaint Date",
-			width: 180,
+			type: "dateTime",
+			operatorValue: "contains",
+			valueFormatter: (params) =>
+				moment(params?.value).format("DD/MM/YYYY hh:mm A"),
+			width: 260,
 		},
 		{
 			field: "complaintTimeFrame",
@@ -102,7 +109,7 @@ const ManageComplaints = () => {
 			complaintNumber: "129861294",
 			complaintDepartment: "Anti-Evasion",
 			complaintStatus: "Pending",
-			complaintDate: "13-01-2023",
+			complaintDate: new Date(2023, 1, 13, 17, 15),
 			complaintTimeFrame: "Normal",
 			taxPayerName: "Starbucks",
 			city: "Cairo",
@@ -115,7 +122,7 @@ const ManageComplaints = () => {
 			complaintNumber: "129861294",
 			complaintDepartment: "Anti-Evasion",
 			complaintStatus: "Transformed",
-			complaintDate: "13-01-2023",
+			complaintDate: new Date(2023, 5, 23, 17, 15),
 			complaintTimeFrame: "Normal",
 			taxPayerName: "Starbucks",
 			city: "Cairo",
@@ -128,7 +135,7 @@ const ManageComplaints = () => {
 			complaintNumber: "129861294",
 			complaintDepartment: "Anti-Evasion",
 			complaintStatus: "Transformed",
-			complaintDate: "13-01-2023",
+			complaintDate: new Date(2023, 7, 10, 17, 15),
 			complaintTimeFrame: "Closed",
 			taxPayerName: "Starbucks",
 			city: "Giza",
@@ -141,7 +148,7 @@ const ManageComplaints = () => {
 			complaintNumber: "129861294",
 			complaintDepartment: "Anti-Evasion",
 			complaintStatus: "Closed",
-			complaintDate: "13-01-2023",
+			complaintDate: new Date(2023, 2, 24, 17, 15),
 			complaintTimeFrame: "Closed",
 			taxPayerName: "Starbucks",
 			city: "Giza",
@@ -154,7 +161,7 @@ const ManageComplaints = () => {
 			complaintNumber: "129861294",
 			complaintDepartment: "Anti-Evasion",
 			complaintStatus: "Pending",
-			complaintDate: "13-01-2023",
+			complaintDate: new Date(2023, 6, 21, 2, 55),
 			complaintTimeFrame: "Normal",
 			taxPayerName: "Starbucks",
 			city: "Cairo",
@@ -167,7 +174,7 @@ const ManageComplaints = () => {
 			complaintNumber: "129861294",
 			complaintDepartment: "Anti-Evasion",
 			complaintStatus: "Closed With Coupon",
-			complaintDate: "13-01-2023",
+			complaintDate: new Date(2023, 1, 13, 4, 15),
 			complaintTimeFrame: "Normal",
 			taxPayerName: "Starbucks",
 			city: "Cairo",
@@ -180,7 +187,7 @@ const ManageComplaints = () => {
 			complaintNumber: "129861294",
 			complaintDepartment: "Anti-Evasion",
 			complaintStatus: "Transformed",
-			complaintDate: "13-01-2023",
+			complaintDate: new Date(2023, 1, 13, 17, 15),
 			complaintTimeFrame: "Normal",
 			taxPayerName: "Starbucks",
 			city: "Cairo",
@@ -193,7 +200,7 @@ const ManageComplaints = () => {
 			complaintNumber: "129861294",
 			complaintDepartment: "Anti-Evasion",
 			complaintStatus: "Closed With Coupon",
-			complaintDate: "13-01-2023",
+			complaintDate: new Date(2023, 3, 20, 16, 20),
 			complaintTimeFrame: "Normal",
 			taxPayerName: "Starbucks",
 			city: "Cairo",
@@ -206,7 +213,7 @@ const ManageComplaints = () => {
 			complaintNumber: "129861294",
 			complaintDepartment: "Anti-Evasion",
 			complaintStatus: "Pending",
-			complaintDate: "13-01-2023",
+			complaintDate: new Date(2023, 5, 22, 11, 30),
 			complaintTimeFrame: "Normal",
 			taxPayerName: "Starbucks",
 			city: "Cairo",
@@ -219,7 +226,7 @@ const ManageComplaints = () => {
 			complaintNumber: "129861294",
 			complaintDepartment: "Anti-Evasion",
 			complaintStatus: "Transformed",
-			complaintDate: "13-01-2023",
+			complaintDate: new Date(2023, 1, 13, 17, 15),
 			complaintTimeFrame: "Normal",
 			taxPayerName: "Starbucks",
 			city: "Cairo",
@@ -232,7 +239,7 @@ const ManageComplaints = () => {
 			complaintNumber: "129861294",
 			complaintDepartment: "Anti-Evasion",
 			complaintStatus: "Pending",
-			complaintDate: "13-01-2023",
+			complaintDate: new Date(2023, 1, 13, 17, 15),
 			complaintTimeFrame: "Normal",
 			taxPayerName: "Starbucks",
 			city: "Cairo",
@@ -278,6 +285,7 @@ const ManageComplaints = () => {
 								right: ["allDetails"],
 							}}
 							pagination={true}
+							unstable_headerFilters
 							// disableColumnMenu={true}
 						/>
 					</div>
