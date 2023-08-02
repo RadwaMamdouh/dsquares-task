@@ -88,3 +88,35 @@
 		}
 	}
 }
+
+:global {
+	.MuiDataGrid-columnHeader {
+		.MuiInputBase-root {
+			width: 100%;
+
+			&::before {
+				display: none;
+			}
+
+			.MuiInput-input {
+				background-color: #fff;
+				border: 1px solid #eee;
+				border-radius: 7px;
+				-webkit-border-radius: 7px;
+				-moz-border-radius: 7px;
+				-ms-border-radius: 7px;
+				-o-border-radius: 7px;
+				width: 100%;
+			}
+		}
+
+		.MuiFormControl-root {
+			width: 100%;
+		}
+
+		.MuiFormLabel-root {
+			z-index: 1;
+			font-size: 14px;
+		}
+	}
+}
