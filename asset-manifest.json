@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/dsquares-task/static/css/main.9e42b8cc.css",
+    "main.js": "/dsquares-task/static/js/main.d800dffd.js",
+    "static/js/787.b5629dd8.chunk.js": "/dsquares-task/static/js/787.b5629dd8.chunk.js",
+    "index.html": "/dsquares-task/index.html",
+    "main.9e42b8cc.css.map": "/dsquares-task/static/css/main.9e42b8cc.css.map",
+    "main.d800dffd.js.map": "/dsquares-task/static/js/main.d800dffd.js.map",
+    "787.b5629dd8.chunk.js.map": "/dsquares-task/static/js/787.b5629dd8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9e42b8cc.css",
+    "static/js/main.d800dffd.js"
+  ]
+}
